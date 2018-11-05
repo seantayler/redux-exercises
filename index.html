@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+  let initialState = 0;
+
+  function reducer(state, action){
+    switch(action.type){
+      case 'INCREMENT': return state + 1,
+      case 'DECREMENT': return state - 1,
+      default: return state
+    }
+  }
+
+  function actionCreatorIncrement(){
+    let action = {
+      type: 'INCREMENT'
+    }
+    return action;
+  }
+
+  function actionCreatorDecrement(){
+    let action = {
+      type: 'DECREMENT'
+    }
+    return action;
+  }
+
+  let theStore = Redux.createStore(reducer);
+
+  thestore.dispatch(actionCreatorIncrement()) //must call function to give the return value
+
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+</body>
+</html>
